@@ -25,7 +25,7 @@ export default () => {
                             <a href="#about">About</a>
                         </li>
                         <li>
-                            <a href="http://blog.arojunior.com/">Blog</a>
+                            <a href="https://medium.com/@arojunior/">Blog</a>
                         </li>
                         <li>
                             <a href="#contact">Contact</a>

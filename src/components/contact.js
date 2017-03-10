@@ -1,38 +1,47 @@
 import React from 'react'
+import {Field,reduxForm} from 'redux-form'
 
-export default (props) => {
-    const {handleSubmit, handleFieldChange} = props
+const Form = props => {
+    const { handleSubmit, pristine, submitting } = props
     return(
         <div className="container" id="contact">
             <legend>Contact</legend>
             <form id="contact-form" method="post" onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <input
+                    <Field
                         type="email"
                         className="form-control"
-                        onChange={handleFieldChange}
+                        component="input"
                         placeholder="Email"
-                        name="data[contact][email]" />
+                        name="email" />
                 </div>
                 <div className="form-group">
-                    <input
+                    <Field
                         type="text"
                         className="form-control"
-                        onChange={handleFieldChange}
+                        component="input"
                         placeholder="Name"
-                        name="data[contact][name]" />
+                        name="name" />
                 </div>
                 <div className="form-group">
-                    <textarea
+                    <Field
                         className="form-control"
                         placeholder="Message"
-                        onChange={handleFieldChange}
-                        name="data[contact][message]">
-                        </textarea>
+                        component="textarea"
+                        name="message"
+                    />
                 </div>
-                <button type="submit" className="btn btn-info">Submit</button>
+                <button
+                    type="submit"
+                    disabled={pristine || submitting}
+                    className="btn btn-info">Submit
+                </button>
             </form>
 
         </div>
     )
 }
+
+export default reduxForm({
+  form: 'contactForm'
+})(Form)

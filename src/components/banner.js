@@ -11,12 +11,6 @@ export default() => {
                 <div className="col-lg-6">
                     <ul className="list-inline banner-social-buttons">
                         <li>
-                            <a href="/resume" className="btn btn-default btn-md">
-                                <i className="fa fa-newspaper-o fa-fw"></i>
-                                <span className="network-name">Resume</span>
-                            </a>
-                        </li>
-                        <li>
                             <a
                                 href="http://www.facebook.com/arojunior18"
                                 className="btn btn-default btn-md">

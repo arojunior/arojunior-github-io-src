@@ -1,4 +1,10 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {reset} from 'redux-form'
+
+import {sendFormAction,contactSent,contactError} from './modules/Contact'
+
 import Nav from './components/nav'
 import Header from './components/header'
 import Services from './components/services'
@@ -11,24 +17,15 @@ import './landing-page.css'
 
 class App extends Component {
 
-    constructor() {
-        super()
+    handleSubmit = (values, dispatch) => {
 
-        this.state = {
-            "data[contact][name]"    : null,
-            "data[contact][email]"   : null,
-            "data[contact][message]" : null
-        }
-    }
-
-    handleFieldChange = (e) => {
-        this.setState({
-            [e.currentTarget.name] : e.currentTarget.value
+        sendFormAction(values)
+        .then(res =>  {
+            dispatch(reset('contactForm'))
+            return contactSent()
         })
-    }
+        .catch(err => contactError({text : err}))
 
-    handleSubmit = (e) => {
-        e.preventDefault()
     }
 
     render() {
@@ -46,10 +43,7 @@ class App extends Component {
                     <Services/>
                 </div>
                 <div className="content-section-b">
-                    <Contact
-                        onSubmit={this.handleSubmit}
-                        fieldChange={this.handleFieldChange}
-                    />
+                    <Contact onSubmit={this.handleSubmit} />
                 </div>
                 <div className="banner">
                     <Banner/>
@@ -63,4 +57,12 @@ class App extends Component {
 
 }
 
-export default App
+const mapStateToProps = state => state.Contact
+
+const mapDispatchToProps = dispatch =>
+    bindActionCreators({sendFormAction}, dispatch)
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App)

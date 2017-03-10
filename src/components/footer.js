@@ -15,7 +15,7 @@ export default () => {
                         </li>
                         <li className="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="http://blog.arojunior.com/">Blog</a>
+                            <a href="https://medium.com/@arojunior/">Blog</a>
                         </li>
                         <li className="footer-menu-divider">&sdot;</li>
                         <li>

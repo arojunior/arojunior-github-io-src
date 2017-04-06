@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {bindActionCreators} from 'redux'
 import {reset} from 'redux-form'
 
-import {sendFormAction,contactSent,contactError} from './modules/Contact'
+import {sendFormAction} from './modules/Contact/actions'
 
 import Nav from './components/nav'
 import Header from './components/header'
@@ -18,14 +17,8 @@ import './landing-page.css'
 class App extends Component {
 
     handleSubmit = (values, dispatch) => {
-
-        sendFormAction(values)
-        .then(res =>  {
-            dispatch(reset('contactForm'))
-            return contactSent()
-        })
-        .catch(err => contactError({text : err}))
-
+        dispatch(sendFormAction(values))
+        dispatch(reset('contactForm'))
     }
 
     render() {
@@ -59,10 +52,4 @@ class App extends Component {
 
 const mapStateToProps = state => state.Contact
 
-const mapDispatchToProps = dispatch =>
-    bindActionCreators({sendFormAction}, dispatch)
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(App)
+export default connect(mapStateToProps)(App)

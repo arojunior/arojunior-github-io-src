@@ -1,44 +1,29 @@
-import {createAction} from 'redux-actions'
-import axios from 'axios'
+import {handleActions} from 'redux-actions'
 
-const CONTACT_SENDING = 'modules/CONTACT/SENDING'
-const CONTACT_SENT = 'modules/CONTACT/SENT'
-const CONTACT_ERROR = 'modules/CONTACT/ERROR'
+import {CONTACT_SENDING, CONTACT_SENT, CONTACT_ERROR} from './actions'
 
 const initialState = {
     sending: false,
     text: null
 }
 
-export default (state = initialState, action) => {
-    switch (action.type) {
-        case CONTACT_SENDING:
-            return {
-                ...state,
-                sending: true
-            }
-        case CONTACT_SENT:
-            return {
-                ...state,
-                sending: false,
-                text: 'OK'
-            }
-        case CONTACT_ERROR:
-            return {
-                ...state,
-                sending: false,
-                text: action.payload.text
-            }
-        default:
-            return state
-    }
-}
+const reducer = handleActions({
+  [CONTACT_SENDING]: (state, action) => ({
+      ...state,
+      sending: true
+  }),
 
-const server = 'http://arojunior.com'
+  [CONTACT_SENT]: (state, action) => ({
+      ...state,
+      sending: false,
+      text: 'OK'
+  }),
 
-export const sendFormAction = values =>
-    axios.post(`${server}/home/contact_send`, values)
+  [CONTACT_ERROR]: (state, action) => ({
+      ...state,
+      sending: false,
+      text: action.payload.data
+  })
+}, initialState)
 
-export const contactSending = createAction(CONTACT_SENDING, sendFormAction)
-export const contactSent = createAction(CONTACT_SENT)
-export const contactError = createAction(CONTACT_ERROR)
+export default reducer

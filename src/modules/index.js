@@ -1,6 +1,6 @@
 import {reducer as formReducer} from 'redux-form'
 import {createStore, applyMiddleware, combineReducers} from 'redux'
-import promiseMiddleware from 'redux-promise'
+import fetchMiddleware from 'fetch-middleware'
 
 import Contact from './Contact'
 
@@ -11,5 +11,5 @@ const rootReducer = combineReducers({
 
 export const store = createStore(
     rootReducer,
-    applyMiddleware(promiseMiddleware)
+    applyMiddleware(fetchMiddleware)
 )

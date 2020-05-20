@@ -27,9 +27,6 @@ export default () => {
                     <li>
                         <a href="https://medium.com/@arojunior/">Articles</a>
                     </li>
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
                 </ul>
             </div>
 

@@ -1,12 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 export default () => {
     return (
         <div className="container">
-
             <div className="row">
                 <div className="col-lg-6">
-                    <h2>Connect to Junior Oliveira:</h2>
+                    <h2>Connect:</h2>
                 </div>
                 <div className="col-lg-6">
                     <ul className="list-inline banner-social-buttons">

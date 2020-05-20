@@ -1,12 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 export default () => {
     return (
-        <div className="container" id="about">
+        <div className="container">
             <div className="row">
                 <div className="col-lg-12">
                     <div className="intro-message">
-                        <h1>Junior Oliveira</h1>
                         <h3>Senior Software Engineer / Full Stack Developer </h3>
                         <hr className="intro-divider" />
                         <ul className="list-inline intro-social-buttons">

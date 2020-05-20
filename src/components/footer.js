@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default () => {
     return (
@@ -15,11 +15,7 @@ export default () => {
                         </li>
                         <li className="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="https://medium.com/@arojunior/">Blog</a>
-                        </li>
-                        <li className="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#contact">Contact</a>
+                            <a href="https://medium.com/@arojunior/">Articles</a>
                         </li>
                     </ul>
                     <p className="copyright text-muted small">Copyright &copy; Junior Oliveira . All Rights Reserved</p>

@@ -1,8 +1,8 @@
 import React from 'react'
-import Logo from './../logo-junioroliveira.png'
+import Logo from '../assets/logo-junioroliveira.png'
 
 export default () => {
-    return(
+    return (
         <div className="container">
             <div className="row">
                 <div className="col-lg-5 col-sm-6">

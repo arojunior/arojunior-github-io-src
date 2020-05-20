@@ -1,9 +1,9 @@
 import {createAction} from 'redux-actions'
 import axios from 'axios'
 
-const CONTACT_SENDING = 'modules/CONTACT/SENDING'
-const CONTACT_SENT    = 'modules/CONTACT/SENT'
-const CONTACT_ERROR   = 'modules/CONTACT/ERROR'
+export const CONTACT_SENDING = 'modules/CONTACT/SENDING'
+export const CONTACT_SENT    = 'modules/CONTACT/SENT'
+export const CONTACT_ERROR   = 'modules/CONTACT/ERROR'
 
 const server = 'http://arojunior.com'
 

@@ -1,9 +1,9 @@
 import React from 'react'
-import {Field,reduxForm} from 'redux-form'
+import { Field, reduxForm } from 'redux-form'
 
 const Form = props => {
     const { handleSubmit, pristine, submitting } = props
-    return(
+    return (
         <div className="container" id="contact">
             <legend>Contact</legend>
             <form id="contact-form" method="post" onSubmit={handleSubmit}>
@@ -43,5 +43,5 @@ const Form = props => {
 }
 
 export default reduxForm({
-  form: 'contactForm'
+    form: 'contactForm'
 })(Form)

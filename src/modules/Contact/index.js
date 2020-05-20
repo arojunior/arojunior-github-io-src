@@ -8,12 +8,12 @@ const initialState = {
 }
 
 const reducer = handleActions({
-  [CONTACT_SENDING]: (state, action) => ({
+  [CONTACT_SENDING]: (state) => ({
       ...state,
       sending: true
   }),
 
-  [CONTACT_SENT]: (state, action) => ({
+  [CONTACT_SENT]: (state) => ({
       ...state,
       sending: false,
       text: 'OK'

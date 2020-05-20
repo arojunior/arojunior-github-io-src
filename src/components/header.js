@@ -1,22 +1,21 @@
 import React from 'react'
 
-export default() => {
+export default () => {
     return (
         <div className="container" id="about">
-
             <div className="row">
                 <div className="col-lg-12">
                     <div className="intro-message">
                         <h1>Junior Oliveira</h1>
-                        <h3>IT Manager / Developer </h3>
-                        <hr className="intro-divider"/>
+                        <h3>Senior Software Engineer / Full Stack Developer </h3>
+                        <hr className="intro-divider" />
                         <ul className="list-inline intro-social-buttons">
                             <li>
                                 <a
-                                    href="http://arojunior.com/resume"
+                                    href="https://medium.com/@arojunior/"
                                     className="btn btn-default btn-lg">
                                     <i className="fa fa-newspaper-o fa-fw"></i>
-                                    <span className="network-name">Resume</span>
+                                    <span className="network-name">Articles</span>
                                 </a>
                             </li>
                             <li>
